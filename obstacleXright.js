@@ -1,10 +1,10 @@
 class ObstacleXright {
     constructor() {
         this.x = width;
-        this.width = 90;
-        this.height = 120;
+        this.width = 65;
+        this.height = 90;
         this.y = 0;
-        this.floor = 500;
+        this.floor = 300;
     }
 
     draw() {

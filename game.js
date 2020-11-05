@@ -23,29 +23,34 @@ class Game {
     draw() {
         this.background.draw();
         this.player.draw();
-        text("Score " + this.score, 50, 100);
-        text("Lives " + this.lives, 900, 100);
-        text("Drinks " + this.power, 400, 100);
+        image(mortyLife, 500, 25, 60, 60);
+        text(this.score, 550, 65);
+        image(rickLife, 600, 25, 55, 55);
+        text(this.lives, 650, 65);
+        image(bottle, 700, 25, 50, 50);
+        text(this.power, 750, 65);
 
         //LIFE UP
 
         if (this.power === 3) {
             this.lives += 1;
             this.power -= 3;
-            burp.play();
+            wudu.play();
 
         }
 
         //LIVES  --> Game Over screen
         if (this.lives === 0) {
-            text("You loooose, bitch!!!", 400, 400);
+            text("Disqualified!!!", 250, 220);
+            let end = setTimeout(gameOver.play(), 2000);
             noLoop();
         }
 
         //WIN --> Win screen
 
-        if (this.score === 1000) {
-            text("Goooood jooob!!!", 400, 400);
+        if (this.score >= 10) {
+            text("Goooood jooob!!!", 250, 220);
+            setTimeout(win.play(), 2000);
             noLoop();
         }
 
@@ -66,6 +71,7 @@ class Game {
                 this.lives -= 1;
                 console.log(this.lives);
                 this.obstacles.splice(index, 1);
+                goddamn.play();
 
             }
         });
@@ -86,6 +92,8 @@ class Game {
                 this.lives -= 1;
                 console.log(this.lives);
                 this.meeseeksRight.splice(index, 1);
+                goddamn.play();
+
 
 
             }
@@ -108,6 +116,8 @@ class Game {
                 this.lives -= 1;
                 console.log(this.lives);
                 this.meeseeksLeft.splice(index, 1);
+                goddamn.play();
+
 
             }
         });
@@ -127,9 +137,10 @@ class Game {
 
             if (this.colisionCheck(bonus, this.player)) {
                 console.log("YEAHH");
-                this.score += 100;
+                this.score += 1;
                 console.log(this.score);
                 this.bonuses.splice(index, 1);
+                owe.play();
 
             }
         });
@@ -153,6 +164,7 @@ class Game {
                 this.power += 1;
                 console.log(this.score);
                 this.bottles.splice(index, 1);
+                burp.play();
             }
 
         });

@@ -7,32 +7,69 @@ function preload() {
     meeseek = loadImage("./images/meeseeks.gif");
     blood = loadImage("./images/blood.png");
     bottle = loadImage("./images/bottle.png");
-    burp = loadSound("/sounds/burp.mp3");
+    rickLife = loadImage("./images/rick_life.png");
+    mortyLife = loadImage("./images/morty.gif");
+    logo = loadImage("./images/logo.png");
+    burp = loadSound("./sounds/burp.mp3");
+    owe = loadSound("./sounds/oooweee.mp3");
+    wudu = loadSound("./sounds/wudu.mp3");
+    goddamn = loadSound("./sounds/hurt.mp3");
+    gameOver = loadSound("./sounds/disqualified.mp3");
+    win = loadSound("./sounds/good_job.mp3");
+
 }
 
 const game = new Game();
 
-function setup() {
 
-    createCanvas(1200, 700);
+function setup() {
+    mode = 0;
+    home = loadImage("./images/rickmorty-home.jpeg");
+    createCanvas(800, 450);
     game.setup();
-    textSize(50);
+    textSize(45);
+
+    //let button = createButton('Restart');
+    //    button.mousePressed(resetGame);
+
 }
+//function resetGame() {
+//    mode = 0;
+//}
 
 function draw() {
     clear();
-    background("cyan");
-    game.draw();
 
 
+    if (mode === 0) {
+        background(home);
+        if (frameCount % 60 < 30) {
+            text('Press Enter to start', 200, 250);
+            textSize(40);
+            fill(250, 0, 0);
+            stroke(10);
+        }
 
-    if (keyIsDown(37)) {
-        return game.player.moveLeft(2);
     }
+    if (mode === 1) {
 
-    if (keyIsDown(39)) {
-        return game.player.moveRight(2);
+        game.draw();
 
+
+
+        if (keyIsDown(37)) {
+            return game.player.moveLeft(2);
+        }
+
+        if (keyIsDown(39)) {
+            return game.player.moveRight(2);
+
+        }
+
+        if (keyIsDown(38)) {
+            return game.player.jump(2);
+
+        }
     }
 
 
@@ -44,6 +81,11 @@ function keyPressed() {
     }
 }
 
+function keyPressed() {
+    if (keyCode === ENTER) {
+        mode = 1;
+    }
+}
 
 
 

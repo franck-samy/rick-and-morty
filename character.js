@@ -3,12 +3,12 @@ class Character {
         this.x = 600;
         this.y = 0;
 
-        this.width = 150;
-        this.height = 150;
+        this.width = 100;
+        this.height = 100;
         this.gravity = 0.3;
 
         this.velocity = 0;
-        this.floor = 450;
+        this.floor = 300;
 
         this.jumpCounts = 0;
 
@@ -25,22 +25,22 @@ class Character {
         }
 
         this.jumpCounts++;
-        this.y -= 7;
-        this.velocity -= 6;
+        this.y -= 5;
+        this.velocity -= 5;
     }
 
     moveLeft() {
         if (this.x <= 0) {
             return;
         }
-        this.x -= 7;
+        this.x -= 3;
     }
 
     moveRight() {
         if (this.x >= WIDTH - this.width) {
             return;
         }
-        this.x += 7;
+        this.x += 3;
     }
 
 
