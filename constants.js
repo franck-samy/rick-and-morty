@@ -6,4 +6,8 @@ let meeseek;
 let blood;
 let bottle;
 
+//Sounds
+
+let burp;
+
 const WIDTH = 1200;

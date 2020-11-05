@@ -3,10 +3,11 @@ function preload() {
     bgImage = loadImage("./images/rmbackground.jpg");
     character = loadImage("./images/ricky.gif");
     badSphere = loadImage("./images/potatoe.gif");
-    morty = loadImage("/images/morty.png");
-    meeseek = loadImage("/images/meeseeks.gif");
-    blood = loadImage("/images/blood.png");
-    bottle = loadImage("images/bottle.png");
+    morty = loadImage("./images/morty.png");
+    meeseek = loadImage("./images/meeseeks.gif");
+    blood = loadImage("./images/blood.png");
+    bottle = loadImage("./images/bottle.png");
+    burp = loadSound("/sounds/burp.mp3");
 }
 
 const game = new Game();

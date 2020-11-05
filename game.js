@@ -11,6 +11,8 @@ class Game {
         this.bottles = [];
         this.power = 0;
 
+
+
     }
 
     setup() {
@@ -30,6 +32,8 @@ class Game {
         if (this.power === 3) {
             this.lives += 1;
             this.power -= 3;
+            burp.play();
+
         }
 
         //LIVES  --> Game Over screen
@@ -114,7 +118,6 @@ class Game {
             this.bonuses.push(new Bonus());
         }
 
-
         this.bonuses.forEach((bonus, index) => {
             bonus.draw();
             if (bonus.x + bonus.width <= 0) {
@@ -127,8 +130,10 @@ class Game {
                 this.score += 100;
                 console.log(this.score);
                 this.bonuses.splice(index, 1);
+
             }
         });
+
 
         // BOTTLE BONUS
 
@@ -148,15 +153,14 @@ class Game {
                 this.power += 1;
                 console.log(this.score);
                 this.bottles.splice(index, 1);
-
             }
-
 
         });
 
 
 
     }
+
 
 
     colisionCheck(obstacle, player) {
