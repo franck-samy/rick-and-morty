@@ -1,15 +1,15 @@
 function preload() {
     console.log("PRELOAD");
-    bgImage = loadImage("./images/rmbackground.jpg");
-    character = loadImage("./images/ricky.gif");
-    badSphere = loadImage("./images/potatoe.gif");
-    morty = loadImage("./images/morty.png");
-    meeseek = loadImage("./images/meeseeks.gif");
-    blood = loadImage("./images/blood.png");
-    bottle = loadImage("./images/bottle.png");
-    rickLife = loadImage("./images/rick_life.png");
-    mortyLife = loadImage("./images/morty.gif");
-    logo = loadImage("./images/logo.png");
+    bgImage = loadImage("./Images/rmbackground.jpg");
+    character = loadImage("./Images/ricky.gif");
+    badSphere = loadImage("./Images/potatoe.gif");
+    morty = loadImage("./Images/morty.png");
+    meeseek = loadImage("./Images/meeseeks.gif");
+    blood = loadImage("./Images/blood.png");
+    bottle = loadImage("./Images/bottle.png");
+    rickLife = loadImage("./Images/rick_life.png");
+    mortyLife = loadImage("./Images/morty.gif");
+    logo = loadImage("./Images/logo.png");
     burp = loadSound("./sounds/burp.mp3");
     owe = loadSound("./sounds/oooweee.mp3");
     wudu = loadSound("./sounds/wudu.mp3");
