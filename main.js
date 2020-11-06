@@ -24,7 +24,7 @@ const game = new Game();
 
 function setup() {
     mode = 0;
-    home = loadImage("./images/rickmorty-home.jpeg");
+    home = loadImage("./Images/rickmorty-home.jpeg");
     createCanvas(800, 450);
     game.setup();
     textSize(45);
